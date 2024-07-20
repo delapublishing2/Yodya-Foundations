@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodya Foundation Inc</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48e6516a44.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Logo YODYA.png" alt="Logo YODYA INC"> Yodya Foundation Inc
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="french.html">Accueil</a></li>
+                <li><a href="french-about.html">À propos</a></li>
+                <li><a href="french-events.html">Événements</a></li>
+                <li><a href="french-haiti.html">Haïti</a></li>
+                <li><a href="french-donate.html">Faire un don</a></li>
+                <li><a href="french-contact.html">Contact</a></li>
+                <li><a href="french-volunteer.html">Bénévolat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="donation-block">
+            <h2>Veuillez nous soutenir dans notre lutte pour aider les femmes, les enfants et les familles à travers le monde</h2>
+            <p>Vos généreuses contributions nous aident à faire une différence dans la vie des femmes, des enfants et des familles d'Haïti et du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+            <p>Les dons et contributions sont déductibles des impôts comme le permet la loi.</p>
+
+            <div class="donation-options">
+                <label>
+                    <input type="radio" name="donation" value="10">10€
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="25">25€
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="50">50€
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="100">100€
+                </label>
+            </div>
+
+            <div class="custom-donation">
+                <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrer un montant personnalisé">
+            </div>
+
+            <div class="donation-frequency">
+                <label>
+                    <input type="radio" name="frequency" value="one-time" checked> Unique
+                </label>
+                <label>
+                    <input type="radio" name="frequency" value="monthly"> Mensuel
+                </label>
+            </div>
+
+            <button class="donate-btn" id="stripe-donate-btn">Faire un Don avec Carte</button>
+            <div id="paypal-button-container"></div>
+        </div>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&vault=true&intent=subscription"></script>
+        <script>
+            paypal.Buttons({
+                createSubscription: function(data, actions) {
+                    let frequency = document.querySelector('input[name="frequency"]:checked').value;
+                    let planId = frequency === 'monthly' ? 'YOUR_MONTHLY_PLAN_ID' : 'YOUR_ONE_TIME_PLAN_ID';
+
+                    return actions.subscription.create({
+                        'plan_id': planId
+                    });
+                },
+                onApprove: function(data, actions) {
+                    alert('Abonnement complété : ' + data.subscriptionID);
+                }
+            }).render('#paypal-button-container');
+        </script>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+        <script src="scripts.js"></script>
+        <script src="server.js"></script>
+        <script src="node.js"></script>
+    </div>
+
+    <div class="form-container">
+        <h2>Yodya a Besoin de Partenaires</h2>
+        <p> Si vous souhaitez collaborer avec nous ou devenir partenaire, veuillez remplir le formulaire ci-dessous. </p>
+        <p>* Parmi les autres avantages, les partenaires peuvent recevoir des packages publicitaires sur notre site Web en fonction du montant contribué ou du package de partenariat choisi !</p>
+        <p>* Vous pouvez également nous contacter à yodyainc@gmail.com. </p>
+        <form id="contact-form">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Téléphone :</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message')
+            };
+            
+            try {
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    alert('Email envoyé avec succès !');
+                    event.target.reset();
+                } else {
+                    const error = await response.text();
+                    alert('Erreur lors de l\'envoi de l\'email : ' + error);
+                }
+            } catch (error) {
+                console.error('Erreur :', error);
+                alert('Erreur lors de l\'envoi de l\'email');
+            }
+        });
+    </script>
+    <footer>
+        <div class="contact-block">
+            <div class="contact-content">
+                <h2>Yodya Inc</h2>
+                <h3>CONTACT US</h3>
+                <p>lyvensguerrier@gmail.com</p>
+                <p>Lyvens Guerrier</p>
+                <p>(470)312-6510</p>
+                <p>(347)329-8595</p>
+                <p>Haiti: (509)3486-8855</p>
+                <h3>OUR LOCATION</h3>
+                <p>107 Enterprise Path</p>
+                <p>Ste 304-2 Hiram Ga, 30141</p>
+               <p> © 2024  Yodya Foundation INC. Tax ID: 99-2171138. Donations and contributions are tax-deductable as allowed by law. Let's help Haiti together</p>
+            </div>
+           
+            <div class="motto">
+                <h2>Donne-moi ta main, et à eux, nous donnons</h2>
+                <h2>Give me your hand and, to them, we give.</h2>
+                <div class="footer-links">
+                    <ul>
+                  <li> <a href="privacy.html">Privacy Policy</a> </li>
+                  <li><a href="terms.html">Terms of Use</a></li>  
+                  <li> <a href="contact.html">Contact Us</a> </li>
+                </ul>
+                </div>
+            </div>
+    
+            
+            
+            <div class="social-media-icons">
+                <a href="https://www.facebohttps://www.facebook.com/groups/554038474721632/posts/1163591747099632/?locale=sw_KEok.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodya Foundation Inc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/48e6516a44.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"> 
+                    <img src="Logo YODYA.png" alt="YODYA INC Logo"> Yodya Foundation Inc
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="english.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="our-team.html"> Team</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="news-events.html">News</a></li>
+                <li><a href="haiti.html">Haiti</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="https://aiwaapp.ai/site/48120/contact-us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<style>
+      /* Timeline */
+      .timeline {
+            position: relative;
+            padding: 40px 0;
+            list-style-type: none;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            top: 20px;
+            left: -10px;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-item-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-item-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--white);
+        }
+
+        .timeline-item h2 {
+            margin-top: 0;
+            font-size: var(--font-size-large);
+            color: var(--text-color);
+        }
+
+        .timeline-item p {
+            margin: 10px 0 0;
+            font-size: var(--font-size-medium);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+            }
+
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item::before {
+                left: 10px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-item-content::before, .timeline-item:nth-child(even) .timeline-item-content::before {
+                right: auto;
+                left: 20px;
+                border: none;
+                border-right: 10px solid var(--white);
+            }
+        }
+</style>
+
+
+<div class="timeline-container">
+    <header class="timeline-header">
+        <h1>Here is our activities timeline from 2008-2024:</h1>
+    </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <ul class="timeline">
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2008 -2009</h2>
+                <p>We predicted a prophecy about Haiti and it was verified in 2010; the prophecy was the earthquake.</p>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2013-2014</h2>
+                <p>We worked on developing a project for Haiti based on agriculture in close collaboration with another organization called " Recourse Hand " This project is still hoping for funding to carry it out.</p>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2016-2017</h2>
+                <p> The director of Yodya Foundation was in Haiti to complete the registration processes as a Candidate for the Senate for  the Department of Artibonite. We participated in the distribution of hot meals to orphaned children in disadvantaged areas.</p>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2018-2020</h2>
+                <p>The Director of YODYA FOUNDATION ; financed the Saint Michel de l'Attalaye-Artibonitethe ,finances the football team and gave some covid 19 supplies to help the vulnerable people.</p>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2021-2023</h2>
+                <p>The Director of YODYA FOUNDATION;meet his population in his native city to provide farmers with manual equipment to bring about a change in their  way of planting, a hydraulic motor pump and two chain saws.</p>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <div class="timeline-item-content">
+                <h2>2023-2024</h2>
+                <p> The Director of YODYA FOUNDATION ,transported a boat to his hometown Saint Michel de l'Attalaye to carry out the fishing process just to help neighboring areas find good quality fish to feed on.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+    <div class="container">
+        <div class="donation-block">
+            <h2>Support Our Cause</h2>
+            <p>Your generous donations help us make a difference in the lives of many. Choose an amount or enter a custom amount to contribute.</p>
+            
+            <div class="donation-options">
+                <label>
+                    <input type="radio" name="donation" value="10">$10
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="25">$25
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="50">$50
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="100">$100
+                </label>
+            </div>
+            
+            <div class="custom-donation">
+                <input type="number" name="custom-amount" id="custom-amount" placeholder="Enter custom amount">
+            </div>
+            
+            <button class="donate-btn">Donate Now</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="donation-block">
+            <h2>Support Our Cause</h2>
+            <p>Your generous donations help us make a difference in the lives of many. Choose an amount or enter a custom amount to contribute.</p>
+            
+            <div class="donation-options">
+                <label>
+                    <input type="radio" name="donation" value="10">$10
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="25">$25
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="50">$50
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="100">$100
+                </label>
+            </div>
+
+            
+            <div class="custom-donation">
+                <input type="number" name="custom-amount" id="custom-amount" placeholder="Enter custom amount">
+            </div>
+            
+            <button class="donate-btn">Donate Now</button>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Need assistance with paying, want to donate through money order or check, or wish to donate supplies?</h2>
+        <p> Now, if you need assistance with paying, want to pay by check or money order, or would like to donate items such as food, clothes, books, computers, ect, then please fill out the form below,  </p>
+        <p> Please make the check in the name of Yodya Foundations Inc</p>
+        <form action="process_form.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="phone" id="phone" name="phone" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+<footer>
+    <div class="contact-block">
+        <div class="contact-content">
+            <h2>Yodya Inc</h2>
+            <h3>CONTACT US</h3>
+            <p>lyvensguerrier@gmail.com</p>
+            <p>Lyvens Guerrier</p>
+            <p>(470)312-6510</p>
+            <p>(347)329-8595</p>
+            <p>Haiti: (509)3486-8855</p>
+            <h3>OUR LOCATION</h3>
+            <p>107 Enterprise Path</p>
+            <p>Ste 304-2 Hiram Ga, 30141</p>
+           <p> © 2024  Yodya Foundation INC. Tax ID: 99-2171138. Donations and contributions are tax-deductable as allowed by law. Let's help Haiti together</p>
+        </div>
+       
+        <div class="motto">
+            <h2>Donne-moi ta main, et à eux, nous donnons</h2>
+            <h2>Give me your hand and, to them, we give.</h2>
+        </div>
+        <div class="social-media-icons">
+            <a href="https://www.facebohttps://www.facebook.com/groups/554038474721632/posts/1163591747099632/?locale=sw_KEok.com" target="_blank" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </div>
+    </div>
+</footer>
+</body>
+</html>

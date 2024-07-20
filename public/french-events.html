@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yodya Foundation Inc</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48e6516a44.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/Logo YODYA.png" alt="Logo YODYA INC"> Yodya Foundation Inc
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="french.html">Accueil</a></li>
+                <li><a href="french-about.html">À propos</a></li>
+                <li><a href="french-events.html">Événements</a></li>
+                <li><a href="french-haiti.html">Haïti</a></li>
+                <li><a href="french-donate.html">Faire un don</a></li>
+                <li><a href="french-contact.html">Contact</a></li>
+                <li><a href="french-volunteer.html">Bénévolat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <style>
+            .timeline {
+                position: relative;
+                padding: 40px 0;
+                list-style-type: none;
+            }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 4px;
+                background: var(--primary-color);
+                transform: translateX(-50%);
+            }
+
+            .timeline-item {
+                position: relative;
+                width: 50%;
+                padding: 20px 40px;
+                box-sizing: border-box;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 50%;
+            }
+
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: var(--primary-color);
+                top: 20px;
+                left: -10px;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item-content {
+                background: var(--white);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-item-content::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: -30px;
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid var(--white);
+            }
+
+            .timeline-item:nth-child(even) .timeline-item-content::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                left: -30px;
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-left: 10px solid var(--white);
+            }
+
+            .timeline-item h2 {
+                margin-top: 0;
+                font-size: var(--font-size-large);
+                color: var(--text-color);
+            }
+
+            .timeline-item p {
+                margin: 10px 0 0;
+                font-size: var(--font-size-medium);
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .timeline-item {
+                    width: 100%;
+                    left: 0 !important;
+                }
+
+                .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+
+                .timeline::before {
+                    left: 20px;
+                }
+
+                .timeline-item::before {
+                    left: 10px;
+                }
+
+                .timeline-item:nth-child(odd) .timeline-item-content::before, .timeline-item:nth-child(even) .timeline-item-content::before {
+                    right: auto;
+                    left: 20px;
+                    border: none;
+                    border-right: 10px solid var(--white);
+                }
+            }
+        </style>
+
+        <div class="timeline-container">
+            <header class="timeline-header">
+                <h1>Découvrez nos événements passés ci-dessous et restez informé de nos événements à venir</h1>
+                <p>Nous avons déjà travaillé pour aider Haïti et d'autres personnes moins fortunées, mais nous ne pouvons pas le faire seuls. Rejoignez-nous. Voici une chronologie de nos événements passés et inscrivez-vous sur notre site web pour être informé de nos futures missions.</p>
+            </header>
+            <div class="divider-primary"></div>
+
+            <!-- Main Content -->
+
+            <div class="container">
+                <div class="block">
+                    <h2>Événements à venir</h2>
+                    <p> À venir bientôt.</p>
+
+                    <div class="content-wrapper">
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button id="prev-month">‹</button>
+                                <h2 id="current-month-year">Juin 2024</h2>
+                                <button id="next-month">›</button>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day">Dim</div>
+                                <div class="calendar-day">Lun</div>
+                                <div class="calendar-day">Mar</div>
+                                <div class="calendar-day">Mer</div>
+                                <div class="calendar-day">Jeu</div>
+                                <div class="calendar-day">Ven</div>
+                                <div class="calendar-day">Sam</div>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+
+                        <div class="video-container">
+                            <h2>Vidéo de l'événement</h2>
+                            <video controls>
+                                <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la balise vidéo.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Event Modal -->
+                    <div id="event-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <h2 id="modal-title">Détails de l'événement</h2>
+                            <form id="event-form">
+                                <label for="event-title">Titre de l'événement</label>
+                                <input type="text" id="event-title" name="event-title" disabled>
+
+                                <label for="event-date">Date de l'événement</label>
+                                <input type="date" id="event-date" name="event-date" disabled>
+
+                                <label for="event-description">Description de l'événement</label>
+                                <textarea id="event-description" name="event-description" rows="4" disabled></textarea>
+
+                                <button type="button" id="join-event">Rejoindre l'événement</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/user-script.js"></script>
+            </div>
+            <div class="container">
+                <div class="donation-block">
+                    <h2>Soutenez notre cause</h2>
+                    <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+
+                    <div class="donation-options">
+                        <label>
+                            <input type="radio" name="donation" value="10">10€
+                        </label>
+                        <label>
+                            <input type="radio" name="donation" value="25">25€
+                        </label>
+                        <label>
+                            <input type="radio" name="donation" value="50">50€
+                        </label>
+                        <label>
+                            <input type="radio" name="donation" value="100">100€
+                        </label>
+                    </div>
+
+                    <div class="custom-donation">
+                        <input type="number" name="custom-amount" id="custom-amount" placeholder="Montant personnalisé">
+                    </div>
+
+                    <button type="button" id="donate-now">Faire un don</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="gallery-block">
+                    <h2>Galerie d'événements</h2>
+                    <div class="gallery">
+                        <img src="images/event1.jpg" alt="Événement 1">
+                        <img src="images/event2.jpg" alt="Événement 2">
+                        <img src="images/event3.jpg" alt="Événement 3">
+                        <img src="images/event4.jpg" alt="Événement 4">
+                        <img src="images/event5.jpg" alt="Événement 5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Modal Script -->
+            <script>
+                const modal = document.getElementById('event-modal');
+                const closeButton = document.querySelector('.close-button');
+
+                const openModal = (event) => {
+                    const title = event.getAttribute('data-title');
+                    const date = event.getAttribute('data-date');
+                    const description = event.getAttribute('data-description');
+
+                    document.getElementById('modal-title').innerText = title;
+                    document.getElementById('event-title').value = title;
+                    document.getElementById('event-date').value = date;
+                    document.getElementById('event-description').value = description;
+
+                    modal.style.display = 'block';
+                };
+
+                closeButton.onclick = () => {
+                    modal.style.display = 'none';
+                };
+
+                window.onclick = (event) => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                };
+
+                document.getElementById('join-event').onclick = () => {
+                    alert('Merci de vous être inscrit !');
+                };
+
+                document.getElementById('donate-now').onclick = () => {
+                    alert('Merci pour votre généreux don !');
+                };
+            </script>
+        </div>
+    </main>
+    <footer>
+        <div class="contact-block">
+            <div class="contact-content">
+                <h2>Yodya Inc</h2>
+                <h3>CONTACT US</h3>
+                <p>lyvensguerrier@gmail.com</p>
+                <p>Lyvens Guerrier</p>
+                <p>(470)312-6510</p>
+                <p>(347)329-8595</p>
+                <p>Haiti: (509)3486-8855</p>
+                <h3>OUR LOCATION</h3>
+                <p>107 Enterprise Path</p>
+                <p>Ste 304-2 Hiram Ga, 30141</p>
+               <p> © 2024  Yodya Foundation INC. Tax ID: 99-2171138. Donations and contributions are tax-deductable as allowed by law. Let's help Haiti together</p>
+            </div>
+           
+            <div class="motto">
+                <h2>Donne-moi ta main, et à eux, nous donnons</h2>
+                <h2>Give me your hand and, to them, we give.</h2>
+                <div class="footer-links">
+                    <ul>
+                  <li> <a href="privacy.html">Privacy Policy</a> </li>
+                  <li><a href="terms.html">Terms of Use</a></li>  
+                  <li> <a href="contact.html">Contact Us</a> </li>
+                </ul>
+                </div>
+            </div>
+    
+            
+            
+            <div class="social-media-icons">
+                <a href="https://www.facebohttps://www.facebook.com/groups/554038474721632/posts/1163591747099632/?locale=sw_KEok.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1492 @@
+
+/* add privacy policy & Terms of service */
+:root {
+    --primary-color:#f3d654;
+    --secondary-color: #1da598;
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --white: #fff;
+    --black: #000;
+    --font-family-sans: "Nunito Sans", sans-serif;
+    --font-family-serif: "Abril Fatface", serif;
+    --font-size-base: 16px;
+    --font-size-large: 2em;
+    --font-size-medium: 1.2em;
+    --font-size-small: 1rem;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar */
+header {
+    background-color: white;
+    color: black;
+    padding: 20px 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+.logo a {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex; /* Added */
+    align-items: center; /* Added */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex; /* Added */
+    align-items: center; /* Added */
+}
+.nav-links li {
+    margin-right: 20px;
+}
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Pop-up Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2, .popup-content p {
+    margin: 0 0 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.btn:hover {
+    background-color: #3de600;
+}
+
+/* Header Section */
+/* General Header Styles */
+.header {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+/* Header Content Styles */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure the content is above the overlay */
+}
+.header-content p {
+    font-size: 1.2em;
+}
+.header-content h1 {
+    font-size: 3em;
+    margin: 10px 0;
+    margin-top: 2rem;
+    color: white;
+    max-width: 500px;
+}
+
+.logo img
+{
+   max-width: 25%; 
+}
+.btn {
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* About Page Header */
+.header-about {
+    background-image: url('../images/FONDATION YODYA EN ACTION A WASHINGTON REFOCUSED.jpg');
+}
+
+
+/* Add other page-specific header styles here */
+
+.header-team {
+    background-image: url('../images/STAFF MEMBERS OF YODYA FOUNDATION IN ACTION SAINT MICHEL DE LATTALAYE - HAITI REFOCUSED.jpg'); /* Replace with the actual path to your image */
+}
+
+.header-home {
+    background-image: url('../images/MAIN IMAGE REFOCUSED.png'); /* Replace with the actual path to your image */
+}
+
+.header-news-events {
+    background-image: url('../images/claudia-altamimi-8taNS4BGNuc-unsplash.jpg');
+}
+
+.header-history { background-image: url('MAIN\ IMAGE\ REFOCUSED.png')
+
+}
+
+.header-haiti-about {
+    background-image: url('../images/MAIN\ IMAGE\ REFOCUSED.png')
+}
+/* General Container */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+.container-img { background-image: url('../images/2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+
+}
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.video-section {
+    margin-top: 10rem;
+    text-align: center; /* Center the content in the section */
+}
+
+.video-container {
+    width: 50%;
+    margin: 0 auto; /* Center the container */
+    position: relative;
+    padding-bottom: 28.125%; /* 16:9 aspect ratio for 50% width */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn-yellow, .btn-green {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.btn-yellow {
+    background-color: var(--primary-color);
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+.btn-green {
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+/* About Section */
+.container-about {
+    background-image: url('../images/SACRIFICATEUR  LYVENS GUERRIER -  YODYA EXJESWED A LINAUGURATION PRESIDENTIELLE 2013 WASHINGTON REFOCUSED.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    padding: 0 50px; /* Add padding to the sides */
+}
+
+
+
+.container-about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Section */
+.container-about {
+    background-image: url('../images/SACRIFICATEUR  LYVENS GUERRIER -  YODYA EXJESWED A LINAUGURATION PRESIDENTIELLE 2013 WASHINGTON REFOCUSED.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: center; /* Center the content horizontally */
+    padding: 0 50px; /* Add padding to the sides */
+}
+
+.container-about .content-about {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limit the width for better readability */
+    margin-left: auto; /* Push the content to the left */
+}
+
+.container-about img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Section Specific Styles */
+.container-about .block {
+    margin-bottom: 50px;
+}
+
+.container-about h1 {
+    color: #fff; /* Change to white for better readability */
+    border-bottom: 8px solid #ffcc00;
+    padding-bottom: 25px;
+    margin-bottom: 20px; /* Add margin for spacing */
+    margin: auto;
+}
+
+.container-about .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-about .image {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.container-about .image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container-about .content-about {
+    flex: 2;
+    text-align: right; /* Align text to the left */
+}
+
+.container-about .objectives {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container-about .objective {
+    flex-basis: 22%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.container-about .objective img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.container-about .yellow-btn {
+    background-color: var(--primary-color);
+    color: black; /* Ensure text is readable */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.container-about .green-btn {
+    background-color: var(--secondary-color);
+    color: black; /* Ensure text is readable */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+/* Block and Content Styles */
+.block {
+    margin-bottom: 10rem;
+}
+h1 {
+    color: #333;
+    border-bottom: 8px solid --primary-color;
+    padding-bottom: 1rem;
+    margin-left: 20rem;
+    margin-right: 20rem; 
+    font-size: xx-large;
+    font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+}
+h2 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 350;
+    font-style: normal;
+    text-transform: uppercase;}
+
+    h3 {font-family: "Abril Fatface", serif;
+        font-weight: 300;
+        font-style: normal;
+        text-transform: uppercase;}
+
+p {
+    font-size: medium;
+padding-top: 1rem;
+font-family: "Nunito Sans", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-variation-settings:
+  "wdth" 100,
+  "YTLC" 500;}
+
+  ul li {  font-size: medium;
+    padding-top: 1rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+
+  }
+
+  a { text-transform: uppercase;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;}
+
+      .divider-primary {
+        height: 10px;
+        width: 50%; /* Adjust width as needed */
+        background-color: var(--primary-color); /* Color of the divider */
+        margin: auto;
+    }
+
+    .divider-secondary {
+        height: 10px;
+        width: 50%; /* Adjust width as needed */
+        background-color: var(--secondary-color); /* Color of the divider */
+        margin: auto
+
+    }
+    
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image {
+    flex: 1;
+    margin-right: 20px;
+}
+.image img {
+    max-width: 70%;
+    height: auto;
+}
+.content {
+    flex: 1;
+    text-align: right;
+}
+
+.objectives {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.objective {
+    flex-basis: 22%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.objective img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+.yellow-btn {
+    background-color: var(--primary-color);
+}
+
+/* Image Block */
+
+.image-block {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+.image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-img {
+    background-image: url('../images/2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+.overlay-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.overlay-text p {
+    margin-bottom: 20px;
+}
+
+/* Contact Block */
+.contact-block {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    padding: 40px;
+}
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content h2, .contact-content h3 {
+    margin-bottom: 10px;
+}
+
+.contact-content p {
+    margin: 5px 0;
+}
+
+.motto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.motto h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Social Media Icon Styles */
+.social-media-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #555;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #FFC107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav-links li {
+        margin-bottom: 10px;
+    }
+    .header-content {
+        left: 20px;
+    }
+    .container-about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .container-about .content {
+        padding-left: 0;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    .image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .contact-block {
+        flex-direction: column;
+    }
+    .motto {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 20px;
+    }
+}
+/* About Us Page */
+
+.container-about-1, .container-about-fonyo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    color: #333;
+}
+
+.container-about-1 {
+    background-color: #fff;
+    margin: auto;
+}
+
+
+.container-about-1 h1 {
+    margin: auto;
+}
+
+.container-about-1 .content {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container-about-fonyo {
+    background-image: url('../images/TRUCK IN HAITI REFOCUSED.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    position: relative;
+}
+
+.container-about-fonyo .content {
+    max-width: 800px;
+    padding: 20px;
+    background: none; /* Remove background */
+    text-align: right; /* Align text to the left */
+    position: absolute;
+    right: 10%;
+}
+
+.container-about-fonyo .content h1 {margin: auto;
+color: white; }
+
+/* Meet our team */
+
+.team-2 .objective {
+    flex-basis: 50%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.meet-team .objective img { border-radius: 100px;}
+
+/* General block styling for info sections */
+.block.info-block {
+    padding: 20px;
+    background-color: #f0f0f0; /* Example background color */
+}
+
+/* Flex container styling for info sections */
+.info-flex-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+}
+
+/* Content styling for info sections */
+.info-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px; /* Space between content and image */
+}
+
+/* Image styling for info sections */
+.info-image {
+    flex: 1;
+    text-align: center; /* Center image within its flex item */
+}
+
+.info-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Additional styling for elements within the content */
+.info-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.info-content p {
+    margin-bottom: 20px;
+}
+
+.info-content ul {
+    list-style: none; /* Remove default list styling */
+    padding-left: 0;
+}
+
+.info-content ul li {
+    margin-bottom: 10px;
+    text-align: left; /* Ensure list items are aligned to the left */
+}
+
+.info-content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.info-content .btn.yellow-btn {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+
+.donation-block {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.donation-block h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.donation-block p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.donation-options label {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.donation-options input {
+    margin-right: 5px;
+}
+
+.custom-donation {
+    margin-bottom: 20px;
+}
+
+.custom-donation input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.donate-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: #FFA000;
+}
+.donation-block-page {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.donation-block h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.donation-block p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.donation-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.donation-options label {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.donation-options input {
+    margin-right: 5px;
+}
+
+.custom-donation {
+    margin-bottom: 20px;
+}
+
+.custom-donation input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.donate-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: #FFA000;
+}
+
+#paypal-button-container {
+    margin-top: 20px;
+}
+
+/* news and events */
+
+
+.header .header-news-events {
+    background-image: url('../images/claudia-altamimi-8taNS4BGNuc-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+
+.view-all {
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+
+.article, .video, .post {
+    flex: 1 1 30%;
+    margin: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.articles, .videos, .social-posts {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.article img, .post img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/*our history section */
+
+.timeline-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header p {
+   max-width: 70%;
+   margin: auto;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.timeline-section img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* All News Section */
+
+
+
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 50px
+}
+
+.grid-item {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Interchangable Blocks */
+ 
+/* background w/ overlay and content */
+
+.custom-overlay-section {
+    position: relative;
+    background-image: url('../images/aaron-burden-KOLEBgHxzcI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Center vertically */
+    padding: 0 50px;
+}
+
+.custom-overlay-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-overlay-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 1; /* Ensure overlay is above the background but below content */
+}
+
+.custom-overlay-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above overlay */
+    color: white;
+    max-width: 800px;
+}
+
+.custom-overlay-content h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+
+.custom-overlay-content p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+
+.overlay-content .buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+}
+
+.overlay-content .btn a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color); /* Example button background color */
+    text-align: center;
+}
+
+.overlay-content .btn .btn-yellow {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.overlay-content .btn .btn-green {
+    background-color: var(--secondary-color);
+}
+
+.overlay-content .btn .btn {
+    background-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .custom-overlay-content .buttons {
+        flex-direction: row; /* Align buttons horizontally on larger screens */
+    }
+}
+
+/* Alignment classes */
+.center-align .custom-overlay-content {
+    text-align: center;
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.left-align .custom-overlay-content {
+    text-align: left;
+    margin-left: 0; /* Align content to the left */
+}
+
+.right-align .custom-overlay-content {
+    text-align: right;
+    margin-right: 0; /* Align content to the right */
+}
+
+/* Sponsor Block Styles */
+.sponsor-block {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sponsor-block h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.sponsor-block p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sponsor-logo {
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.sponsor-logo img {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.1);
+}
+
+.form-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+form input, form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #FFA000;
+
+}
+
+
+/* Activities Page */
+
+.container-img.type-two { background-image: url('../images/078.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+
+}
+.overlay-text.type-two {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: var(--black)
+}
+
+.image.image-type-two {
+    flex: 1;
+   
+}
+.image.image-type-two img {
+    max-width: 100%;
+    height: auto;
+}
+
+.block.info-block.template-block {
+    padding: 20px;
+    background-color: #fff; /* Example background color */
+}
+
+.login-container, .calendar-container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.calendar-container {
+    flex: 1;
+    max-width: 600px;
+    min-width: 300px;
+    margin-right: 20px;
+}
+
+.video-container {
+    flex: 1;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.calendar-grid {
+    display: flex;
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+}
+
+.calendar-day {
+    flex: 1;
+    padding: 10px 0;
+}
+
+.calendar-days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar-date {
+    width: 14.28%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-date:hover {
+    background-color: #f1f1f1;
+}
+
+.calendar-date .event-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+form button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .calendar-container, .video-container {
+        margin: 10px 0;
+    }
+
+    .calendar-date {
+        width: 14.28571429%; /* 100 / 7 */
+        padding: 5px;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .calendar-header button {
+        font-size: 1em;
+    }
+}
+
+.container.type-one p {
+    max-width: 70%;
+    margin: auto;
+}
+
+.timeline-header h1 {
+    margin: 0px 250px;
+}
+
+.content.social-media .social-media-icons { margin: 20px;
+
+}
+
+.image.people-haiti {  flex: 1;
+    margin-right: 20px;
+
+}
+
+.image.people-haiti img {
+    max-width: 100%;
+    height: auto;
+}
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.slideshow-slide {
+    display: none;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Caption text */
+.slideshow-caption {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+.meet-team p {max-width: 70%;
+    margin: auto;
+margin-top: 40px}
+
+.motto li 
+{
+    list-style: none;
+}

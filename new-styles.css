@@ -1,0 +1,399 @@
+/* General Styles */
+:root {
+    --primary-color: #5BFD4D;
+    --secondary-color: #FFC107;
+    --text-color: #333;
+    --background-color: #f0f0f0;
+    --font-main: "Nunito Sans", sans-serif;
+    --font-heading: "Abril Fatface", serif;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    border-bottom: 0.5rem solid var(--secondary-color);
+    padding-bottom: 1rem;
+    margin: 2rem auto;
+    max-width: 80%;
+  }
+  
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+  
+  /* Layout */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Header and Navigation */
+  header {
+    background-color: white;
+    padding: 1rem 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    max-width: 25%;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Header Sections */
+  .header {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 3rem;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Specific Header Backgrounds */
+  .header-home { background-image: url('MAIN IMAGE REFOCUSED.png'); }
+  .header-about { background-image: url('FONDATION YODYA EN ACTION A WASHINGTON REFOCUSED.jpg'); }
+  .header-team { background-image: url('STAFF MEMBERS OF YODYA FOUNDATION IN ACTION SAINT MICHEL DE LATTALAYE - HAITI REFOCUSED.jpg'); }
+  .header-news-events { background-image: url('claudia-altamimi-8taNS4BGNuc-unsplash.jpg'); }
+  
+  /* Sections */
+  .block {
+    margin-bottom: 5rem;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Donation Block */
+  .donation-block {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .donation-options {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar, .flex-container {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      margin-top: 1rem;
+    }
+  
+    .header-content {
+      padding: 0 1rem;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Accessibility */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* Add more specific styles as needed */
+
+  /* Base Styles */
+
+/* Typography */
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+.container-img { background-image: url('2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+
+}
+
+
+/* Header and Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+.logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+.nav-links li {
+    margin-right: 15px;
+}
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+.header {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1;
+}
+
+/* Header Content Styles */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure the content is above the overlay */
+}
+.header-content p {
+    font-size: 1.2em;
+}
+.header-content h1 {
+    font-size: 3em;
+    margin: 10px 0;
+    margin-top: 2rem;
+    color: white;
+    max-width: 500px;
+}
+
+.logo img
+{
+   max-width: 25%; 
+}
+
+/* About Page Header */
+.header-about {
+    background-image: url('FONDATION YODYA EN ACTION A WASHINGTON REFOCUSED.jpg'); /* Replace with the actual path to your image */
+}
+
+/* Add other page-specific header styles here */
+
+.header-team {
+    background-image: url('STAFF MEMBERS OF YODYA FOUNDATION IN ACTION SAINT MICHEL DE LATTALAYE - HAITI REFOCUSED.jpg'); /* Replace with the actual path to your image */
+}
+
+.header-home {
+    background-image: url('MAIN IMAGE REFOCUSED.png'); /* Replace with the actual path to your image */
+}
+
+.header-news-events {
+    background-image: url('claudia-altamimi-8taNS4BGNuc-unsplash.jpg');
+}
+
+/* Buttons */
+
+/* Sections */
+
+/*video section */
+
+.video-section {
+    margin-top: 10rem;
+    text-align: center; /* Center the content in the section */
+}
+
+.video-container {
+    width: 50%;
+    margin: 0 auto; /* Center the container */
+    position: relative;
+    padding-bottom: 28.125%; /* 16:9 aspect ratio for 50% width */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* our history section */
+
+.timeline-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.timeline-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.timeline-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.timeline-section img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.timeline-content {
+    max-width: 800px;
+    text-align: center;
+}
+.timeline-year {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.timeline-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.timeline-link {
+    font-size: 18px;
+    color: #0073e6;
+    text-decoration: none;
+}
+.timeline-link:hover {
+    text-decoration: underline;
+}
+
+/* Forms */
+
+/* Media Queries */
+
+/* Utilities */

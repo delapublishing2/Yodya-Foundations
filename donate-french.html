@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="donation-block">
+        <h2>Soutenez-nous dans notre lutte pour aider les familles et les enfants défavorisés</h2>
+        <p>Vos dons généreux nous aident à faire une différence dans la vie de nombreuses familles et enfants. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+        <p>Votre don est déductible des impôts.</p>
+
+        <div class="donation-options">
+            <label>
+                <input type="radio" name="donation" value="10">$10
+            </label>
+            <label>
+                <input type="radio" name="donation" value="25">$25
+            </label>
+            <label>
+                <input type="radio" name="donation" value="50">$50
+            </label>
+            <label>
+                <input type="radio" name="donation" value="100">$100
+            </label>
+        </div>
+
+        <div class="custom-donation">
+            <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrez un montant personnalisé">
+        </div>
+
+        <div class="donation-frequency">
+            <label>
+                <input type="radio" name="frequency" value="one-time" checked> Don unique
+            </label>
+            <label>
+                <input type="radio" name="frequency" value="monthly"> Mensuel
+            </label>
+        </div>
+
+        <button class="donate-btn" id="stripe-donate-btn">Faire un don avec la carte</button>
+        <div id="paypal-button-container"></div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&vault=true&intent=subscription"></script>
+    <script>
+        paypal.Buttons({
+            createSubscription: function(data, actions) {
+                let frequency = document.querySelector('input[name="frequency"]:checked').value;
+                let planId = frequency === 'monthly' ? 'YOUR_MONTHLY_PLAN_ID' : 'YOUR_ONE_TIME_PLAN_ID';
+
+                return actions.subscription.create({
+                    'plan_id': planId
+                });
+            },
+            onApprove: function(data, actions) {
+                alert('Subscription completed: ' + data.subscriptionID);
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>
