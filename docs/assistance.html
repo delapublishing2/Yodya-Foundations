@@ -35,60 +35,59 @@
     </header>
     
     <div class="form-container">
-        <h2>Need assistance? </h2>
-        <p>If you need assistance in any way with using our website, or trying to donate, or any other issues, please fill out the form below or email us at yodyainc@gmail.com.</p>
-        <p>You can also call us at (470)312-6510 or Haiti: (509)3486-8855 or write us at 107 Enterprise Path Ste 304-2 Hiram Ga, 30141 </p>  
-        <p>Please make the check in the name of Yodya Foundations Inc.</p>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <h2>We Are Here To Help </h2>
+    <p>If you need assistance in any way possible, please fill out the form below or email us at yodyainc@gmail.com.</p>
+    <p>You can also call us at (470)312-6510 or Haiti: (509)3486-8855 or write us at 107 Enterprise Path Ste 304-2 Hiram Ga, 30141 </p>  
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send</button>
+    </form>
+</div>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            message: formData.get('message')
+        };
+        
+        try {
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
-    </div>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            };
-            
-            try {
-                const response = await fetch('/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    alert('Email sent successfully!');
-                    event.target.reset();
-                } else {
-                    const error = await response.text();
-                    alert('Error sending email: ' + error);
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Error sending email');
+            if (response.ok) {
+                alert('Email sent successfully!');
+                event.target.reset();
+            } else {
+                const error = await response.text();
+                alert('Error sending email: ' + error);
             }
-        });
-    </script>
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error sending email');
+        }
+    });
+</script>
 
 <footer>
     <div class="contact-block">
@@ -137,6 +136,3 @@
     </div>
     </div>
 </footer>
-
-</body>
-</html>
