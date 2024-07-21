@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Ensure the body parser can handle JSON
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
