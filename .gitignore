@@ -75,16 +75,16 @@ whattoput.txt
 client_secret_887106308716-c5vm03hp1c527dvl5nnoikqevmg78gg6.apps.googleusercontent.com.json
 generate_token.js
 deploy.yml
-index.js
+
 
 # Admin
-admin-script.js
-events-admin.html
-user-script.js
+
+
+
 
 #Payment
-server.js
-scripts.js
+
+
 
 
 # Ignore sensitive configuration files
