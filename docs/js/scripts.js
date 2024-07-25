@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
