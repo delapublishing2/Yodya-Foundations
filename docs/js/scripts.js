@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     // Function to manage donation buttons visibility based on language preference
     function manageDonationButtonsVisibility() {
