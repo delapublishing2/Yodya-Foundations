@@ -206,7 +206,7 @@
                     <h2>Need assistance? </h2>
                     <p>If you need assistance with donating, have a question, want to pay by check or money order, would like to donate items such as food, clothes, books, computers, etc., or need help in any way, then please fill out the form below.</p>
                     <p>Please make the check in the name of Yodya Foundations Inc.</p>
-                    <form id="contact-form">
+                    <form id="contact-form" method="POST" action="/submit">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
                         
@@ -220,7 +220,7 @@
                         <textarea id="message" name="message" rows="5" required></textarea>
                         
                         <button type="submit">Send</button>
-                    </form>
+                    </form>                    
                 </div>
                 <script>
                     document.getElementById('contact-form').addEventListener('submit', async function(event) {
