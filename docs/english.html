@@ -247,9 +247,9 @@
                   </div>
                   
                 <script>
-                 document.getElementById('contact-form').addEventListener('submit', async function(event) {
+       document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
-  
+
   const formData = new FormData(event.target);
   const data = {
     name: formData.get('name'),
@@ -259,7 +259,7 @@
   };
 
   try {
-    const response = await fetch('https://backend-2ejapqs8r-delapublishing2s-projects.vercel.app/api/submit', { // Adjust the URL to your Vercel backend endpoint
+    const response = await fetch('https://backend-eu4n85kfr-delapublishing2s-projects.vercel.app/api/submit', { // Use your production URL
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -281,6 +281,7 @@
     alert('Error sending email');
   }
 });
+
 
                 </script>
                

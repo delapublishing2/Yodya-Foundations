@@ -3,9 +3,9 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const cors = require('cors');
-app.use(cors());
-
-require('dotenv').config();
+app.use(cors({
+  origin: ['https://delapublishing2.github.io', 'https://yodya.org'], // Replace with your actual frontend URLs
+}));
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -25,6 +25,42 @@ oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/docs/english.html');
 });
+
+app.post('/submit', async (req, res) => {
+  const { name, email, phone, message } = req.body;
+
+  console.log('Form Data:', { name, email, phone, message });
+
+  try {
+    const accessToken = await oAuth2Client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: 'OAuth2',
+        user: process.env.EMAIL_USER,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
+        accessToken: accessToken.token,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.TO_EMAIL,
+      subject: 'New Form Submission',
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+    };
+
+    const result = await transporter.sendMail(mailOptions);
+    res.status(200).send('Form submitted successfully!');
+  } catch (error) {
+    console.error('Error sending email:', error); // Log the error
+    res.status(500).send('Error sending email: ' + error.message);
+  }
+});
+
 
 app.post('/submit', async (req, res) => {
   const { name, email, phone, message } = req.body;
