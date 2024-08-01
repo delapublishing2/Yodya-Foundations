@@ -494,6 +494,24 @@ font-variation-settings:
     max-height: 150px;
     margin-bottom: 10px;
 }
+
+.objectives.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.objective .objectives.services{
+    flex-basis: 12%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.objective .objectives.services img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
 .yellow-btn {
     background-color: var(--primary-color);
 }
