@@ -1537,10 +1537,12 @@ margin-top: 40px}
         height: auto;
         margin: auto;
       padding-top: 25px;
-   
+   border-radius: 100px;
     
 
     }
+
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
