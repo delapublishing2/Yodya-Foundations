@@ -3,12 +3,12 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const cors = require('cors');
-app.use(cors({
-  origin: ['https://delapublishing2.github.io', 'https://yodya.org'], // Replace with your actual frontend URLs
-}));
-
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({
+  origin: ['https://yodya.org'], // Replace with your actual frontend URLs
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json()); // Ensure the body parser can handle JSON
@@ -61,42 +61,21 @@ app.post('/submit', async (req, res) => {
   }
 });
 
-
-app.post('/submit', async (req, res) => {
-  const { name, email, phone, message } = req.body;
-
-  // Log the form data to verify it is received correctly
-  console.log('Form Data:', { name, email, phone, message });
-
-  try {
-    const accessToken = await oAuth2Client.getAccessToken();
-
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        type: 'OAuth2',
-        user: process.env.EMAIL_USER,
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN,
-        accessToken: accessToken.token,
-      },
-    });
-
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.TO_EMAIL,
-      subject: 'New Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
-    };
-
-    const result = await transporter.sendMail(mailOptions);
-    res.status(200).send('Form submitted successfully!');
-  } catch (error) {
-    res.status(500).send('Error sending email: ' + error);
-  }
-});
-
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
+});
+
+// Global error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err); // Log the unhandled error
+  res.status(500).send('Internal Server Error');
+});
+
+// Handle uncaught exceptions and unhandled rejections
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
