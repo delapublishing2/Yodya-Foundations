@@ -1,5 +1,3 @@
-// admin-script.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const currentMonthYear = document.getElementById('current-month-year');
     const calendarDays = document.querySelector('.calendar-days');
@@ -14,20 +12,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginContainer = document.querySelector('.login-container');
     const calendarContainer = document.querySelector('.calendar-container');
     const logoutButton = document.getElementById('logout-button');
-    require('dotenv').config();
 
     let date = new Date();
-    let events = JSON.parse(localStorage.getItem('events')) || {};
-    let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+    let events = {};  // Assuming you're using an API for event storage
 
-    const adminUser = {
-        username: process.env.ADMIN_USERNAME,
-        password: process.env.ADMIN_PASSWORD,
-        role: process.env.ADMIN_ROLE
-      };
-      
-      // Example usage
-      console.log(`Admin User: ${adminUser.username}, Role: ${adminUser.role}`);
+    const API_URL = 'https://backend-cd504z2zm-delapublishing2s-projects.vercel.app/api/events'
+
+    async function handleLogin(event) {
+        event.preventDefault();
+        const username = loginForm['username'].value;
+        const password = loginForm['password'].value;
+
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                const token = result.token;
+                localStorage.setItem('authToken', token);  // Store the token in local storage
+                loginContainer.style.display = 'none';
+                calendarContainer.style.display = 'block';
+                renderCalendar();
+            } else {
+                alert('Invalid credentials');
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+        }
+    }
+
     function renderCalendar() {
         const month = date.getMonth();
         const year = date.getFullYear();
@@ -64,77 +81,95 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function openModal(dateString) {
-        const event = events[dateString];
-        if (event) {
-            modalTitle.textContent = 'Edit Event';
-            eventForm['event-id'].value = dateString;
-            eventForm['event-title'].value = event.title;
-            eventForm['event-date'].value = dateString;
-            eventForm['event-description'].value = event.description;
-            deleteEventButton.style.display = 'block';
-        } else {
-            modalTitle.textContent = 'Add Event';
-            eventForm.reset();
-            eventForm['event-id'].value = dateString;
-            deleteEventButton.style.display = 'none';
+    async function fetchEvents() {
+        try {
+            const token = localStorage.getItem('authToken');
+            const response = await fetch(API_URL, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const data = await response.json();
+            events = data;
+            renderCalendar();
+        } catch (error) {
+            console.error('Error fetching events:', error);
         }
-
-        modal.style.display = 'block';
     }
 
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    function saveEvent(event) {
+    async function saveEvent(event) {
         event.preventDefault();
         const eventId = eventForm['event-id'].value;
         const eventTitle = eventForm['event-title'].value;
         const eventDate = eventForm['event-date'].value;
         const eventDescription = eventForm['event-description'].value;
 
-        events[eventId] = {
+        const eventData = {
+            id: eventId,
             title: eventTitle,
             date: eventDate,
             description: eventDescription
         };
-        localStorage.setItem('events', JSON.stringify(events));
 
-        eventForm.reset();
-        closeModal();
-        renderCalendar();
-    }
+        try {
+            const token = localStorage.getItem('authToken');
+            const response = await fetch(API_URL, {
+                method: 'POST',  // Change to 'PUT' if updating an existing event
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(eventData)
+            });
 
-    function deleteEvent() {
-        const eventId = eventForm['event-id'].value;
-        delete events[eventId];
-        localStorage.setItem('events', JSON.stringify(events));
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
-        eventForm.reset();
-        closeModal();
-        renderCalendar();
-    }
+            const result = await response.json();
+            console.log(result.message);
 
-    function handleLogin(event) {
-        event.preventDefault();
-        const username = loginForm['username'].value;
-        const password = loginForm['password'].value;
-
-        if (username === adminUser.username && password === adminUser.password) {
-            currentUser = adminUser;
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
-            loginContainer.style.display = 'none';
-            calendarContainer.style.display = 'block';
-            renderCalendar();
-        } else {
-            alert('Invalid username or password');
+            closeModal();
+            fetchEvents();
+        } catch (error) {
+            console.error('Error saving event:', error);
         }
     }
 
+    async function deleteEvent() {
+        const eventId = eventForm['event-id'].value;
+
+        try {
+            const token = localStorage.getItem('authToken');
+            const response = await fetch(`${API_URL}/${eventId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            console.log(result.message);
+
+            closeModal();
+            fetchEvents();
+        } catch (error) {
+            console.error('Error deleting event:', error);
+        }
+    }
+
+    eventForm.addEventListener('submit', saveEvent);
+    deleteEventButton.addEventListener('click', deleteEvent);
+
+    fetchEvents();
+
     function handleLogout() {
-        currentUser = null;
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('authToken');  // Clear the token on logout
         loginContainer.style.display = 'block';
         calendarContainer.style.display = 'none';
     }
@@ -152,20 +187,19 @@ document.addEventListener('DOMContentLoaded', function() {
     closeModalButton.addEventListener('click', closeModal);
 
     window.addEventListener('click', function(event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             closeModal();
         }
     });
 
-    eventForm.addEventListener('submit', saveEvent);
-    deleteEventButton.addEventListener('click', deleteEvent);
     loginForm.addEventListener('submit', handleLogin);
     logoutButton.addEventListener('click', handleLogout);
 
-    if (currentUser && currentUser.role === 'admin') {
+    const token = localStorage.getItem('authToken');
+    if (token) {
         loginContainer.style.display = 'none';
         calendarContainer.style.display = 'block';
-        renderCalendar();
+        fetchEvents();
     } else {
         loginContainer.style.display = 'block';
         calendarContainer.style.display = 'none';

@@ -1541,6 +1541,22 @@ margin-top: 40px}
 
     }
 
+    .btn-cashapp {
+        background-color: var(--secondary-color); /* Cash App's green color */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .btn-cashapp:hover {
+        background-color: #009a34; /* Darker green on hover */
+    }
+    
+
 
 
 /* Media Queries for Responsive Design */
@@ -1625,4 +1641,5 @@ margin: 0 auto;
 }
 
     }
+
 
