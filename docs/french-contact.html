@@ -17,27 +17,31 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html">
+                <a href="index.html"> 
                     <img src="images/Logo YODYA.png" alt="Logo YODYA INC"> Yodya Foundation Inc
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="french.html">Accueil</a></li>
-                <li><a href="french-about.html">À propos</a></li>
-                <li><a href="french-events.html">Événements</a></li>
-                <li><a href="french-haiti.html">Haïti</a></li>
-                <li><a href="french-donate.html">Faire un don</a></li>
-                <li><a href="french-contact.html">Contact</a></li>
-                <li><a href="french-volunteer.html">Bénévolat</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="donate.html">Faire un don</a></li>
+                <li><a href="volunteer.html">Bénévolat</a></li>
+                <li><a href="haiti.html">Haïti</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
     
     <div class="form-container">
-        <h2>Besoin d'aide ?</h2>
-        <p>Si vous avez besoin d'assistance pour effectuer un paiement, avez une question, souhaitez payer par chèque ou mandat postal, aimeriez faire don d'articles tels que de la nourriture, des vêtements, des livres, des ordinateurs, etc., ou avez besoin d'aide de quelque manière que ce soit, veuillez remplir le formulaire ci-dessous.</p>
-        <p>Veuillez libeller le chèque au nom de Fondation Yodya Inc.</p>
-        <form id="contact-form">
+        <h2>Besoin d'assistance ?</h2>
+        <p>Si vous avez besoin d'aide pour utiliser notre site Web, faire un don, ou tout autre problème, veuillez remplir le formulaire ci-dessous ou nous envoyer un e-mail à yodyainc@gmail.com.</p>
+        
+        <p>Vous pouvez également nous appeler au (470) 312-6510 ou en Haïti : (509) 3486-8855, ou nous écrire à 107 Enterprise Path Ste 304-2 Hiram Ga, 30141.</p>
+        
+        <p>Veuillez libeller le chèque au nom de Yodya Foundations Inc.</p>
+        
+        <form id="contact-form" action="https://formspree.io/f/movakaez">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" required>
             
@@ -53,39 +57,53 @@
             <button type="submit">Envoyer</button>
         </form>
     </div>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
+    <footer>
+        <div class="contact-block">
+            <div class="contact-content">
+                <h2>Yodya Inc</h2>
+                <h3>CONTACT US</h3>
+                <p>info@yodya.org</p>
+                <p>lyvensguerrier@gmail.com</p>
+                <p>Lyvens Guerrier</p>
+                <p>US: (470)312-6510</p>
+                <p>US: (347)329-8595</p>
+                <p>Haiti: (509)3486-8855</p>
+                <h3>OUR LOCATION</h3>
+                <p>107 Enterprise Path</p>
+                <p>Ste 304-2 Hiram Ga, 30141</p>
+               <p> © 2024  Yodya Foundation INC. Tax ID: 99-2171138. Donations and contributions are tax-deductable as allowed by law. Let's help Haiti together</p>
+            </div>
+           
+            <div class="motto">
+                <h2>Donne-moi ta main, et à eux, nous donnons</h2>
+                <h2>Give me your hand and, to them, we give.</h2>
+                <div class="footer-links">
+                    <ul>
+                  <li> <a href="privacy.html">Privacy Policy</a> </li>
+                  <li><a href="terms.html">Terms of Use</a></li>  
+                  <li> <a href="contact.html">Contact Us</a> </li>
+                </ul>
+                </div>
+            </div>
+    
             
-            const formData = new FormData(event.target);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                message: formData.get('message')
-            };
             
-            try {
-                const response = await fetch('/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    alert('Email envoyé avec succès !');
-                    event.target.reset();
-                } else {
-                    const error = await response.text();
-                    alert('Erreur lors de l\'envoi de l\'email : ' + error);
-                }
-            } catch (error) {
-                console.error('Erreur :', error);
-                alert('Erreur lors de l\'envoi de l\'email');
-            }
-        });
-    </script>
-</body>
-</html>
+            <div class="social-media-icons">
+                <a href="https://www.facebohttps://www.facebook.com/groups/554038474721632/posts/1163591747099632/?locale=sw_KEok.com" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    </body>
+    </html>

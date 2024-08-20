@@ -55,7 +55,7 @@ header {
     align-items: center; /* Added */
 }
 .nav-links li {
-    margin-right: 20px;
+    margin-right: 35px;
 }
 .nav-links li a {
     color: black;

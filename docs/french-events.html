@@ -151,110 +151,308 @@
             }
         </style>
 
-        <div class="timeline-container">
-            <header class="timeline-header">
-                <h1>Découvrez nos événements passés ci-dessous et restez informé de nos événements à venir</h1>
-                <p>Nous avons déjà travaillé pour aider Haïti et d'autres personnes moins fortunées, mais nous ne pouvons pas le faire seuls. Rejoignez-nous. Voici une chronologie de nos événements passés et inscrivez-vous sur notre site web pour être informé de nos futures missions.</p>
-            </header>
+<div class="timeline-container">
+    <header class="timeline-header">
+      <h1>Consultez nos événements passés ci-dessous, et soyez informé de nos événements à venir</h1>
+      <p>Nous avons déjà travaillé pour aider Haïti et les autres personnes défavorisées, mais nous ne pouvons pas le faire seuls. Merci de vous joindre à nous. Voici une chronologie de nos événements passés, et veuillez vous inscrire à notre site Web pour être informé de nos futures missions.</p>
+    </header>
+    <div class="divider-primary"></div>
+  
+    <!-- Contenu principal -->
+  
+    <div class="container">
+        <div class="block">
+            <h2>Événements à venir</h2>
+            <p>À venir bientôt.</p>
+      
+            <div class="content-wrapper">
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month">‹</button>
+                        <h2 id="current-month-year">Juin 2024</h2>
+                        <button id="next-month">›</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-day">Dim</div>
+                        <div class="calendar-day">Lun</div>
+                        <div class="calendar-day">Mar</div>
+                        <div class="calendar-day">Mer</div>
+                        <div class="calendar-day">Jeu</div>
+                        <div class="calendar-day">Ven</div>
+                        <div class="calendar-day">Sam</div>
+                    </div>
+                    <div class="calendar-days"></div>
+                </div>
+  
+                <div class="video-container">
+                    <h2>Vidéo de l'événement</h2>
+                    <video controls>
+                        <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la balise vidéo.
+                    </video>
+                </div>
+            </div>
+  
+            <!-- Modal de l'événement -->
+            <div id="event-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2 id="modal-title">Détails de l'événement</h2>
+                    <form id="event-form">
+                        <label for="event-title">Titre de l'événement</label>
+                        <input type="text" id="event-title" name="event-title" disabled>
+  
+                        <label for="event-date">Date de l'événement</label>
+                        <input type="date" id="event-date" name="event-date" disabled>
+  
+                        <label for="event-description">Description de l'événement</label>
+                        <textarea id="event-description" name="event-description" rows="4" disabled></textarea>
+  
+                        <button type="button" id="join-event">Rejoindre l'événement</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="js/user-script.js"></script>
+    </div>
+  
+    <div class="container">
+        <div class="donation-block">
+            <h2>Soutenez notre cause</h2>
+            <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+            
+            <div class="donation-options">
+                <label>
+                    <input type="radio" name="donation" value="10">10$
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="25">25$
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="50">50$
+                </label>
+                <label>
+                    <input type="radio" name="donation" value="100">100$
+                </label>
+            </div>
+  
+            <div class="custom-donation">
+                <input type="number" name="custom-amount" id="custom-amount" placeholder="Montant personnalisé">
+            </div>
+            
+            <button class="donate-btn">Faire un don maintenant</button>
+        </div>
+    </div>
+  
+    <div class="container">
+        <div class="container type-one">
+            <h1>Notre chronologie des activités de 2008 à 2024 :</h1>
             <div class="divider-primary"></div>
+        </div>
+      <ul class="timeline">
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2008 - 2009</h2>
+                  <p>Nous avons prédit une prophétie concernant Haïti qui s'est vérifiée en 2010 ; la prophétie était le tremblement de terre.</p>
+              </div>
+          </li>
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2013 - 2014</h2>
+                  <p>Nous avons travaillé sur le développement d'un projet pour Haïti basé sur l'agriculture en étroite collaboration avec une autre organisation appelée "Recourse Hand". Ce projet espère toujours un financement pour être réalisé.</p>
+              </div>
+          </li>
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2016 - 2017</h2>
+                  <p>Le directeur de la Fondation Yodya était en Haïti pour compléter les démarches d'inscription en tant que candidat au Sénat pour le Département de l'Artibonite. Nous avons participé à la distribution de repas chauds aux enfants orphelins dans les zones défavorisées.</p>
+              </div>
+          </li>
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2018 - 2020</h2>
+                  <p>Le directeur de la Fondation YODYA a financé l'équipe de football de Saint Michel de l'Attalaye-Artibonite et a fourni des fournitures pour le COVID-19 pour aider les personnes vulnérables.</p>
+              </div>
+          </li>
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2021 - 2023</h2>
+                  <p>Le directeur de la Fondation YODYA a rencontré sa population dans sa ville natale pour fournir aux agriculteurs des équipements manuels visant à améliorer leur méthode de plantation, une pompe hydraulique et deux tronçonneuses.</p>
+              </div>
+          </li>
+          <li class="timeline-item">
+              <div class="timeline-item-content">
+                  <h2>2023 - 2024</h2>
+                  <p>Le directeur de la Fondation YODYA a transporté un bateau jusqu'à sa ville natale de Saint Michel de l'Attalaye pour réaliser le processus de pêche, afin d'aider les zones voisines à trouver du poisson de bonne qualité pour se nourrir.</p>
+              </div>
+          </li>
+      </ul>
+    </div>
 
-            <!-- Main Content -->
-
-            <div class="container">
-                <div class="block">
-                    <h2>Événements à venir</h2>
-                    <p> À venir bientôt.</p>
-
-                    <div class="content-wrapper">
-                        <div class="calendar-container">
-                            <div class="calendar-header">
-                                <button id="prev-month">‹</button>
-                                <h2 id="current-month-year">Juin 2024</h2>
-                                <button id="next-month">›</button>
-                            </div>
-                            <div class="calendar-grid">
-                                <div class="calendar-day">Dim</div>
-                                <div class="calendar-day">Lun</div>
-                                <div class="calendar-day">Mar</div>
-                                <div class="calendar-day">Mer</div>
-                                <div class="calendar-day">Jeu</div>
-                                <div class="calendar-day">Ven</div>
-                                <div class="calendar-day">Sam</div>
-                            </div>
-                            <div class="calendar-days"></div>
-                        </div>
-
-                        <div class="video-container">
-                            <h2>Vidéo de l'événement</h2>
-                            <video controls>
-                                <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
-                                Votre navigateur ne supporte pas la balise vidéo.
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Event Modal -->
-                    <div id="event-modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close-button">&times;</span>
-                            <h2 id="modal-title">Détails de l'événement</h2>
-                            <form id="event-form">
-                                <label for="event-title">Titre de l'événement</label>
-                                <input type="text" id="event-title" name="event-title" disabled>
-
-                                <label for="event-date">Date de l'événement</label>
-                                <input type="date" id="event-date" name="event-date" disabled>
-
-                                <label for="event-description">Description de l'événement</label>
-                                <textarea id="event-description" name="event-description" rows="4" disabled></textarea>
-
-                                <button type="button" id="join-event">Rejoindre l'événement</button>
-                            </form>
-                        </div>
-                    </div>
+    <section class="container-img type-two">
+        <div class="overlay-text type-two">
+            <h2>Inscrivez-vous sur notre site Web</h2>
+            <p>Inscrivez-vous sur notre site Web pour recevoir des nouvelles et des mises à jour sur nos activités et nos progrès. Nous serions ravis de vous voir lors de l'un de nos futurs événements.</p>
+            <a href="contact.html" class="btn yellow-btn">S'INSCRIRE</a>
+            <a href="donate.html" class="btn-green">FAIRE UN DON</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="block">
+            <div class="flex-container">
+                <div class="image image-type-two">
+                    <img src="images/431.jpg" alt="Image d'Haïti">
                 </div>
-                <script src="js/user-script.js"></script>
-            </div>
-            <div class="container">
-                <div class="donation-block">
-                    <h2>Soutenez notre cause</h2>
-                    <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
-
-                    <div class="donation-options">
-                        <label>
-                            <input type="radio" name="donation" value="10">10€
-                        </label>
-                        <label>
-                            <input type="radio" name="donation" value="25">25€
-                        </label>
-                        <label>
-                            <input type="radio" name="donation" value="50">50€
-                        </label>
-                        <label>
-                            <input type="radio" name="donation" value="100">100€
-                        </label>
+                <div class="content social-media">
+                    <h2>Abonnez-vous à nos réseaux sociaux !</h2>
+                    <p>Montrez-nous votre soutien en vous abonnant à nos réseaux sociaux où vous pouvez consulter nos événements, participer à nos discussions et obtenir du contenu et des mises à jour en direct ! Vous pouvez également vous abonner à notre page pour recevoir les dernières nouvelles.</p>
+                    <div class="social-media-icons">
+                        <a href="https://www.facebook.com/groups/554038474721632/posts/1163591747099632/?locale=sw_KE" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
-
-                    <div class="custom-donation">
-                        <input type="number" name="custom-amount" id="custom-amount" placeholder="Montant personnalisé">
-                    </div>
-
-                    <button type="button" id="donate-now">Faire un don</button>
+                    <a href="about.html" class="btn">En savoir plus</a>
+                    <a href="donate.html" class="btn green-btn">FAIRE UN DON</a>
                 </div>
             </div>
-
-            <div class="container">
-                <div class="gallery-block">
-                    <h2>Galerie d'événements</h2>
-                    <div class="gallery">
-                        <img src="images/event1.jpg" alt="Événement 1">
-                        <img src="images/event2.jpg" alt="Événement 2">
-                        <img src="images/event3.jpg" alt="Événement 3">
-                        <img src="images/event4.jpg" alt="Événement 4">
-                        <img src="images/event5.jpg" alt="Événement 5">
-                    </div>
+        </div>
+    </div>
+    
+    <div class="block info-block template-block">
+        <div class="flex-container info-flex-container">
+            <div class="content info-content">
+                <h2>Vous voulez rejoindre un événement ?</h2>
+                <p>Si vous souhaitez participer à l'un de nos événements, veuillez cliquer sur le bouton "Rejoindre l'événement".</p>
+                <a href="contact.html" class="btn btn-yellow">Rejoindre l'événement</a>
+            </div>
+            <div class="image info-image">
+                <img src="images/896.jpg" alt="Membre de FONYO">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="block">
+            <div class="flex-container">
+                <div class="image image-type-two">
+                    <figure>
+                        <img src="images/topsphere-media-rWEUBzbp2rc-unsplash.jpg" alt="Image d'Haïti" width="600">
+                        <figcaption>Photo de <a href="https://unsplash.com/@zvessels55?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">TopSphere Media</a> sur <a href="https://unsplash.com/photos/smiling-children-rWEUBzbp2rc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></figcaption>
+                    </figure>
+                </div>
+                <div class="content">
+                    <h2>Vous voulez être bénévole ?</h2>
+                    <p>Si vous souhaitez offrir votre temps en tant que bénévole, veuillez cliquer sur le bouton "Bénévolat" et aider notre organisation.</p>
+                    <a href="volunteer.html" class="btn btn-green">Bénévole</a>
                 </div>
             </div>
+        </div>
+    </div>
+    
+    <div class="block">
+        <div class="container">
+            <div class="container-event">
+                <h1>Découvrez les photos de nos événements !</h1>
+                <div class="slideshow-container">
+                    <div class="slideshow-slide fade">
+                        <img src="images/055.jpg" style="width:100%">
+                        <div class="slideshow-caption"></div>
+                    </div>
+    
+                    <div class="slideshow-slide fade">
+                        <img src="images/110193619_3253971097983854_5464523584534661964_n.jpg" style="width:100%">
+                        <div class="slideshow-caption"></div>
+                    </div>
+                    <div class="slideshow-slide fade">
+                        <img src="images/RENCONTRE DU PRESIDENT DE LA FONDATION YODYA -GUERRIER LYVENS_POUR LA PREPARATION DE ZONE FRANCHE COMMUNE DE SAINT MICHEL DE L'ATTALAYE 2014-2015 A WASHINGTON DC.jpg" style="width:100%">
+                        <div class="slideshow-caption">RENCONTRE DU PRESIDENT DE LA FONDATION YODYA -GUERRIER LYVENS_POUR LA PREPARATION DE ZONE FRANCHE COMMUNE DE SAINT MICHEL DE L'ATTALAYE 2014-2015 A WASHINGTON DC</div>
+                    </div>
+                    <div class="slideshow-slide fade">
+                        <img src="images/651.jpg" style="width:100%">
+                        <div class="slideshow-caption">RENCONTRE DU PRESIDENT DE LA FONDATION YODYA -GUERRIER LYVENS_POUR LA PREPARATION DE ZONE FRANCHE COMMUNE DE SAINT MICHEL DE L'ATTALAYE 2014-2015 A WASHINGTON DC</div>
+                    </div>
+    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+    
+                <div class="slideshow-dots" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+                <script src="js/slideshow.js"></script>
+            </div>
+        </div>
+    </div>
+    <style>
+        .container-event {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        .videos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .video {
+            flex: 1 1 calc(32% - 20px);
+            box-sizing: border-box;
+            max-width: calc(33.333% - 20px);
+            position: relative;
+            overflow: hidden;
+            padding-top: 10%; /* 16:9 Aspect Ratio */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video iframe, .video video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+        
+        .video p {
+            text-align: center;
+            margin: 10px 0 0;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .video {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .video {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+        </style>
+  
 
             <!-- Event Modal Script -->
             <script>
@@ -293,6 +491,32 @@
                 };
             </script>
         </div>
+
+        <section class="popular-videos">
+            <div class="container">
+                <h2>Vidéos Populaires</h2>
+                <p>Regardez certaines de nos vidéos les plus populaires.</p>
+                <div class="videos">
+                    <div class="video">
+                        <iframe src="https://www.youtube.com/embed/WEKw81xvRBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>TIRNY MINISTRIES</p>
+                    </div>
+                    <div class="video">
+                        <iframe src="https://www.youtube.com/embed/p3ROtDCx6bI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>TEMPLE AT ISRAEL</p>
+                    </div>
+                    <div class="video">
+                        <video controls>
+                            <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
+                            Votre navigateur ne supporte pas la balise vidéo.
+                        </video>
+                        <p>Titre de la Vidéo 3</p>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/@lyvensguerrier504" class="btn view-all">Voir Toutes les Vidéos</a>
+            </div>
+        </section>
+        
     </main>
     <footer>
         <div class="contact-block">
