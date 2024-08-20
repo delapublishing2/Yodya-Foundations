@@ -295,7 +295,7 @@
                        <p> You can also call us at (470)312-6510 or Haiti: (509)3486-8855 or write us at 107 Enterprise Path Ste 304-2 Hiram Ga, 30141</p>
                         
                        <p>Please make the check in the name of Yodya Foundations Inc.</p>
-                    <form id="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/movakaez">
                       <label for="name">Name:</label>
                       <input type="text" id="name" name="name" required>
                       <label for="email">Email:</label>
@@ -308,34 +308,7 @@
                     </form>
                   </div>
                 
-                  <script>
-                    document.getElementById('contact-form').addEventListener('submit', function(event) {
-                      event.preventDefault();
-                
-                      const name = document.getElementById('name').value;
-                      const email = document.getElementById('email').value;
-                      const phone = document.getElementById('phone').value;
-                      const message = document.getElementById('message').value;
-                
-                      const emailContent = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
-                
-                      Email.send({
-                        SecureToken: '39a6146e-b946-4b25-bddc-a85c20b06526', // Ensure you use your actual secure token
-                        To: 'yodyainc@gmail.com', // Change this to the recipient's email address
-                        From: 'yodyainc@gmail.com', // Change this to your verified email address
-                        Subject: 'New Form Submission',
-                        Body: emailContent
-                      })
-                      .then(message => alert(message))
-                      .catch(error => console.error('Error sending email:', error));
-                    });
-                  </script>
-
-         
-<script src="https://smtpjs.com/v3/smtp.js">
-</script>
-<script> src="js/script.js"</script>
-
+                 
 
 
 
