@@ -66,34 +66,20 @@
                 </label>
             </div>
 
-            <button class="donate-btn" id="stripe-donate-btn">Faire un don avec une carte</button>
+            <a class="btn btn-yellow" id="stripe-donate-btn" href="https://www.paypal.com/donate/?hosted_button_id=BEUM8CVFXYN78">Contribuer</a>
+            <a href="https://cash.app/$YODYAFOUNDATION" class="btn green-btn">Contribuer Cashapp</a>
+
+
             <script src="https://www.paypal.com/sdk/js?client-id=BAAnu5cXmCa4e_oAgpC-j4_QyVT7GvPAL2fxRpSrkpKXYxcgdlnSQXZWeG6wTugG4KHMehWoj12VW71-E4&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+    <div class="buttons">
 <div id="paypal-container-7NEAPUQ48RYDW"></div>
 <script>
   paypal.HostedButtons({
     hostedButtonId: "7NEAPUQ48RYDW",
   }).render("#paypal-container-7NEAPUQ48RYDW")
 </script>
-            <button class="donate-btn" id="stripe-donate-btn" href="https://cash.app/$YODYA FOUNDATION">Faire un don avec Cashapp</button>
-            <div id="paypal-button-container"></div>
-
-            <script src=""></script>
-            <script>
-                paypal.Buttons({
-                    createSubscription: function(data, actions) {
-                        let frequency = document.querySelector('input[name="frequency"]:checked').value;
-                        let planId = frequency === 'monthly' ? 'YOUR_MONTHLY_PLAN_ID' : 'YOUR_ONE_TIME_PLAN_ID';
-
-                        return actions.subscription.create({
-                            'plan_id': planId
-                        });
-                    },
-                    onApprove: function(data, actions) {
-                        alert('Abonnement complété : ' + data.subscriptionID);
-                    }
-                }).render('#paypal-button-container');
-            </script>
-
+</div>
+          
             <script src="https://js.stripe.com/v3/"></script>
             <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
             <script src="scripts.js"></script>

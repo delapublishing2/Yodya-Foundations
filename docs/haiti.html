@@ -164,10 +164,9 @@
                 
                     <!-- Donation Section CTA -->
                     <div class="container">
-                        <div class="block">
                         <div class="donation-block">
-                            <h2>Please Support Our Cause</h2>
-                            <p>Your generous donations help us make a difference in the lives of many. Choose an amount or enter a custom amount to contribute.</p>
+                            <h2>Support Our Cause</h2>
+                            <p>Your generous donations help us make a difference in the lives of women, children, and families from all over the world. Choose an amount or enter a custom amount to contribute.</p>
                             
                             <div class="donation-options">
                                 <label>
@@ -188,10 +187,26 @@
                             <div class="custom-donation">
                                 <input type="number" name="custom-amount" id="custom-amount" placeholder="Enter custom amount">
                             </div>
+                            <div class="buttons">
+                            <button class="donate-btn" title='More Options'>Donate Page</button>
                             
-                            <button class="donate-btn">Donate Now</button>
+                            <div id="donate-button-container">
+                                <div id="donate-button" class="donate-btn" href="donate.html"></div>
+                                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                                <script>
+                                PayPal.Donation.Button({
+                                env:'production',
+                                hosted_button_id:'VAH9KUUUJ8P4E',
+                                image: {
+                                src:'',
+                                alt:'Donate with PayPal button',
+                                title:'PayPal - The safer, easier way to pay online!',
+                                }
+                                }).render('#donate-button');
+                                </script>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 
                     <div class="container">

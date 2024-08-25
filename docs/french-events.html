@@ -240,10 +240,28 @@
                 <input type="number" name="custom-amount" id="custom-amount" placeholder="Montant personnalisé">
             </div>
             
-            <button class="donate-btn">Faire un don maintenant</button>
+            <div class="buttons">
+                <button class="donate-btn" title='More Options'>Contribuer</button>
+                
+                <div id="donate-button-container">
+                    <div id="donate-button" class="donate-btn" href="donate.html"></div>
+                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                    <script>
+                    PayPal.Donation.Button({
+                    env:'production',
+                    hosted_button_id:'VAH9KUUUJ8P4E',
+                    image: {
+                    src:'',
+                    alt:'Donate with PayPal button',
+                    title:'PayPal - The safer, easier way to pay online!',
+                    }
+                    }).render('#donate-button');
+                    </script>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-  
+
     <div class="container">
         <div class="container type-one">
             <h1>Notre chronologie des activités de 2008 à 2024 :</h1>
