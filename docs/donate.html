@@ -67,29 +67,23 @@
                     <input type="radio" name="frequency" value="monthly"> Monthly
                 </label>
             </div>
-    
             <button class="donate-btn" id="stripe-donate-btn">Donate with Card</button>
-            <button class="donate-btn" id="stripe-donate-btn" href="https://cash.app/$YODYA FOUNDATION">Donate with Cashapp</button>
-            <div id="paypal-button-container"></div>
+            <a href="https://cash.app/$YODYAFOUNDATION" class="btn green-btn">Pay With Cashapp</a>
+            <div class="container">
+            <script src="https://www.paypal.com/sdk/js?client-id=BAAnu5cXmCa4e_oAgpC-j4_QyVT7GvPAL2fxRpSrkpKXYxcgdlnSQXZWeG6wTugG4KHMehWoj12VW71-E4&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+    
+<div id="paypal-container-7NEAPUQ48RYDW"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "7NEAPUQ48RYDW",
+  }).render("#paypal-container-7NEAPUQ48RYDW")
+</script>
+</div>
+
+ 
+            
         
 
-    
-        <script src=""></script>
-        <script>
-            paypal.Buttons({
-                createSubscription: function(data, actions) {
-                    let frequency = document.querySelector('input[name="frequency"]:checked').value;
-                    let planId = frequency === 'monthly' ? 'YOUR_MONTHLY_PLAN_ID' : 'YOUR_ONE_TIME_PLAN_ID';
-    
-                    return actions.subscription.create({
-                        'plan_id': planId
-                    });
-                },
-                onApprove: function(data, actions) {
-                    alert('Subscription completed: ' + data.subscriptionID);
-                }
-            }).render('#paypal-button-container');
-        </script>
 
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
