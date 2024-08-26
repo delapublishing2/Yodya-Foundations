@@ -1649,4 +1649,51 @@ margin: 0 auto;
 
     }
 
+/* General styling for the content wrapper */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Calendar and Video containers */
+.calendar-container, .video-container {
+    flex: 1 1 100%; /* Full width on mobile */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Calendar iframe styling */
+.calendar-container iframe {
+    width: 100%;
+    height: auto;
+    min-height: 325px; /* Ensure a minimum height for visibility */
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    border: 0; /* Remove border */
+}
+
+/* Video styling */
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .calendar-container, .video-container {
+        flex: 1 1 45%; /* Half width on tablets and larger screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-wrapper {
+        gap: 40px; /* Increase the gap between items on larger screens */
+    }
+}
+
+
 
