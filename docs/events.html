@@ -167,6 +167,81 @@
           }
           .block {margin-bottom: 0;}
       }
+
+      /* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Hide images by default */
+
+/* Slideshow container with fixed size */
+.slideshow-event-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Set the maximum width for the slideshow */
+    height: 600px; /* Fixed height for the slideshow */
+    margin: auto;
+    overflow: hidden;
+    background-color: #000; /* Optional: set a background color */
+}
+.slide {
+    display: none;
+    width: 100%;
+}
+.custom-crop1 img {
+    object-position: center top;
+    width: 100%;  /* Full width of the container */
+    height: 500px; /* Custom height for this specific slide */
+}
+
+.custom-crop2 img {
+    object-position: center center; /* Default: crops from the center */
+}
+
+.custom-crop3 img {
+    object-position:80%; /* Crops image from the bottom */
+}
+
+/* Image styling */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9); /* Adjusts brightness to match aesthetics */
+    transition: transform 0.5s ease;
+}
+
+/* Fade animation for slides */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* Zoom effect */
+.slide img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .slideshow-container {
+        height: 250px;
+    }
+    .slide img {
+        height: 250px;
+    }
+}
+
+
 </style>
 
 
@@ -178,6 +253,8 @@
     
   </header>
   <div class="divider-primary"></div>
+
+  
 
 <!-- Main Content -->
 <!--    <div class="content-wrapper">
@@ -253,8 +330,163 @@
     <div class="block">
         <h2>Upcoming Events</h2>
         <p> Coming soon.</p>
+  </div>
+  </div>
+
   
-        
+          
+    <section class="popular-videos">
+        <div class="container">
+            <h2>Popular Videos</h2>
+            <p>Watch some of our most popular videos.</p>
+            <div class="videos">
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/WEKw81xvRBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>TIRNY MINISTRIES</p>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/p3ROtDCx6bI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>TEMPLE AT ISRAEL</p>
+                </div>
+                <div class="video">
+                    <video controls>
+                        <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@lyvensguerrier504" class="btn view-all">View All Videos</a>
+        </div>
+    </section>
+
+
+    <div class="block">
+        <div class="container">
+        <div class="container-event">
+    <h1> Check Out Our Event Pictures!</h1>
+    <div class="slideshow-event-container">
+        <div class="slide fade custom-crop1">
+            <img src="images/055.jpg">
+            <div class="slideshow-caption"></div>
+        </div>
+    
+        <div class="slide fade custom-crop1">
+            <img src="images/110193619_3253971097983854_5464523584534661964_n.jpg" >
+            <div class="slideshow-caption"></div>
+        </div>
+        <div class="slide fade custom-crop3">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 2.jpg"  >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop2">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 3.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 4.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+    
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 5.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+    
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 6.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 7.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 8.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 9.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 10.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 11.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 12.jpg" >
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 13.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 14.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 15.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 16.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 17.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 18.jpg">
+    
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 19.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 20.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 21.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 22.jpg">
+            <div class="slideshow-caption">HELPING BUILD IN HAITI</div>
+        </div>
+        <div class="slide fade custom-crop1">
+            <img src="images/YODYA FOUNDATION ACTIVIST HAITI 23.jpg">
+            <div class="slideshow-caption">YODYA FOUNDATION IN ACTION</div>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.querySelectorAll('.slide');
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change slide every 5 seconds
+}
+
+    </script>
+    
+ </div>
+
+
+
      
 <div class="container">
     <div class="donation-block">
@@ -409,8 +641,8 @@
         <div class="flex-container">
             <div class="image image-type-two">
                 <figure>
-                    <img src="images/topsphere-media-rWEUBzbp2rc-unsplash.jpg" alt="Haiti Picture" width="600">
-                    <figcaption>Photo by <a href="https://unsplash.com/@zvessels55?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">TopSphere Media</a> on <a href="https://unsplash.com/photos/smiling-children-rWEUBzbp2rc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    <img src="images/IMG-20240731-WA0032.jpg" alt="Haiti Picture" width="600">
+                    <figcaption>Photo by Yodya Inc
                     </figcaption>
                 </figure>
             </div>
@@ -423,7 +655,8 @@
     </div>
 </div>
 
-<div class="block">
+
+<!-- <div class="block">
     <div class="container">
     <div class="container-event">
 <h1> Check Out Our Event Pictures!</h1>
@@ -601,32 +834,9 @@
     }
     </style>
   
-    
-    <section class="popular-videos">
-        <div class="container">
-            <h2>Popular Videos</h2>
-            <p>Watch some of our most popular videos.</p>
-            <div class="videos">
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/WEKw81xvRBw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p>TIRNY MINISTRIES</p>
-                </div>
-                <div class="video">
-                    <iframe src="https://www.youtube.com/embed/p3ROtDCx6bI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p>TEMPLE AT ISRAEL</p>
-                </div>
-                <div class="video">
-                    <video controls>
-                        <source src="videos/VID-20240702-WA0000.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <p>Video Title 3</p>
-                </div>
-            </div>
-            <a href="https://www.youtube.com/@lyvensguerrier504" class="btn view-all">View All Videos</a>
-        </div>
-    </section>
-    
+  
+     -->
+
 
 
 <!-- Footer -->
