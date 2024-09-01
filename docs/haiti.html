@@ -22,7 +22,7 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="english.html">Home</a></li>
+                <li><a href="index-en.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="donate.html">Donate</a></li>
@@ -163,51 +163,55 @@
                     </section>
                 
                     <!-- Donation Section CTA -->
-                    <div class="container">
-                        <div class="donation-block">
-                            <h2>Support Our Cause</h2>
-                            <p>Your generous donations help us make a difference in the lives of women, children, and families from all over the world. Choose an amount or enter a custom amount to contribute.</p>
-                            
-                            <div class="donation-options">
-                                <label>
-                                    <input type="radio" name="donation" value="10">$10
-                                </label>
-                                <label>
-                                    <input type="radio" name="donation" value="25">$25
-                                </label>
-                                <label>
-                                    <input type="radio" name="donation" value="50">$50
-                                </label>
-                                <label>
-                                    <input type="radio" name="donation" value="100">$100
-                                </label>
-                            </div>
+                   <!-- Donation Block -->
+<section class="donation-block-section">
+    <div class="container">
+            <div class="donation-block">
+                <h2>Support Our Cause</h2>
+                <p>Your generous donations help us make a difference in the lives of women, children, and families from all over the world. Choose an amount or enter a custom amount to contribute.</p>
                 
-                            
-                            <div class="custom-donation">
-                                <input type="number" name="custom-amount" id="custom-amount" placeholder="Enter custom amount">
-                            </div>
-                            <div class="buttons">
-                            <button class="donate-btn" title='More Options'>Donate Page</button>
-                            
-                            <div id="donate-button-container">
-                                <div id="donate-button" class="donate-btn" href="donate.html"></div>
-                                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-                                <script>
-                                PayPal.Donation.Button({
-                                env:'production',
-                                hosted_button_id:'VAH9KUUUJ8P4E',
-                                image: {
-                                src:'',
-                                alt:'Donate with PayPal button',
-                                title:'PayPal - The safer, easier way to pay online!',
-                                }
-                                }).render('#donate-button');
-                                </script>
-                                </div>
-                            </div>
-                        </div>
+                <div class="donation-options">
+                    <label>
+                        <input type="radio" name="donation" value="10">$10
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="25">$25
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="50">$50
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="100">$100
+                    </label>
+                </div>
+        
+                <div class="custom-donation">
+                    <input type="number" name="custom-amount" id="custom-amount" placeholder="Enter custom amount">
+                </div>
+        
+                <div class="buttons">
+                    <a class="btn donate-btn" href="donate.html">Donate Page</a>
+                    <div id="donate-button-container">
+                        <div id="donate-button" class="donate-btn"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PayPal Script -->
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+                env: 'production',
+                hosted_button_id: 'VAH9KUUUJ8P4E',
+                image: {
+                    src: '',
+                    alt: 'Donate with PayPal button',
+                    title: 'PayPal - The safer, easier way to pay online!',
+                }
+            }).render('#donate-button');
+        </script>
+    </section>
                 
                     <div class="container">
                         <div class="block">

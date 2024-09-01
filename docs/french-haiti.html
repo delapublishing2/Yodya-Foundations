@@ -22,7 +22,7 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="french.html">Accueil</a></li>
+                <li><a href="index-fr.html">Accueil</a></li>
                 <li><a href="french-about.html">À Propos</a></li>
                 <li><a href="french-events.html">Événements</a></li>
                 <li><a href="french-donate.html">Faire un Don</a></li>
@@ -157,83 +157,56 @@
 </section>
 
 <!-- Section d'appel aux dons -->
-<div class="container">
-    <div class="block">
-        <div class="donation-block">
-            <h2>Soutenez notre cause</h2>
-            <p>Vos généreux dons nous aident à faire une différence dans la vie de nombreux individus. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
 
-            <div class="donation-options">
-                <label>
-                    <input type="radio" name="donation" value="10">10$
-                </label>
-                <label>
-                    <input type="radio" name="donation" value="25">25$
-                </label>
-                <label>
-                    <input type="radio" name="donation" value="50">50$
-                </label>
-                <label>
-                    <input type="radio" name="donation" value="100">100$
-                </label>
-            </div>
-
-            <div class="custom-donation">
-                <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrez un montant personnalisé">
-            </div>
-
-            <div class="buttons">
-                <button class="donate-btn" title='More Options'>Contribuer</button>
+<section class="donation-block-section">
+    <div class="container">
+            <div class="donation-block">
+                <h2>Soutenez Notre Cause</h2>
+                <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
                 
-                <div id="donate-button-container">
-                    <div id="donate-button" class="donate-btn" href="donate.html"></div>
-                    <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
-                    <script>
-                    PayPal.Donation.Button({
-                    env:'production',
-                    hosted_button_id:'VAH9KUUUJ8P4E',
-                    image: {
-                    src:'',
-                    alt:'Donate with PayPal button',
-                    title:'PayPal - The safer, easier way to pay online!',
-                    }
-                    }).render('#donate-button');
-                    </script>
+                <div class="donation-options">
+                    <label>
+                        <input type="radio" name="donation" value="10">10$
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="25">25$
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="50">50$
+                    </label>
+                    <label>
+                        <input type="radio" name="donation" value="100">100$
+                    </label>
+                </div>
+        
+                <div class="custom-donation">
+                    <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrez un montant personnalisé">
+                </div>
+        
+                <div class="buttons">
+                    <a class="btn donate-btn" href="french-donate.html">Page de Don</a>
+                    <div id="donate-button-container">
+                        <div id="donate-button" class="donate-btn"></div>
                     </div>
                 </div>
             </div>
         </div>
-
-<div class="container">
-    <div class="block">
-        <div class="form-container">
-            <h2>Nous sommes ici pour aider</h2>
-            <p>Si vous avez besoin d'assistance de quelque manière que ce soit, veuillez appuyer sur le bouton ci-dessous ou envoyez-nous un courriel à yodyainc@gmail.com.</p>
-            <p>Vous pouvez également nous appeler au (470)312-6510 ou en Haïti au : (509)3486-8855 ou nous écrire à 107 Enterprise Path Ste 304-2 Hiram Ga, 30141.</p>
-            <a href="french-assistance.html" class="btn yellow-btn">Obtenez de l'aide maintenant</a>  
-        </div>
-    </div>
-</div>
-
-<!-- Introduction -->
-
-<section id="mission">
-    <div class="block info-block">
-        <div class="flex-container info-flex-container">
-            <div class="content info-content">
-                <h2>À propos d'Haïti</h2>
-                <p>Saviez-vous qu'Haïti est la première nation indépendante d'Amérique latine et des Caraïbes, ayant obtenu sa liberté du joug colonial français en 1804 ? Fait intéressant, bien qu'ils aient obtenu leur liberté en 1804, ce n'est qu'en 1864 qu'Haïti a été pleinement reconnu par les États-Unis. Haïti a été parmi les premiers à abolir l'esclavage en Amérique. C'est également la seule nation créée à la suite d'une révolte d'esclaves réussie.</p>
-                <a href="french-contact.html" class="btn yellow-btn">INSCRIVEZ-VOUS MAINTENANT</a>
-                <a href="french-donate.html" class="btn green-btn">FAIRE UN DON</a>
-            </div>
-            <div class="image info-image">
-                <img src="images/aaron-burden-KOLEBgHxzcI-unsplash.jpg" alt="Membre de FONYO">
-            </div>
-        </div>
-    </div>
-</section>
-
-</div>
+        
+        <!-- Script PayPal -->
+        <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+        <script>
+            PayPal.Donation.Button({
+                env: 'production',
+                hosted_button_id: 'VAH9KUUUJ8P4E',
+                image: {
+                    src: '',
+                    alt: 'Bouton de don avec PayPal',
+                    title: 'PayPal - Le moyen le plus sûr et le plus simple de payer en ligne !',
+                }
+            }).render('#donate-button');
+        </script>
+    </section>
+    
 
 <div class="page-container">
     <!-- Crise actuelle -->

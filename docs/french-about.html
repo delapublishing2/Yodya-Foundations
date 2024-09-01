@@ -22,7 +22,7 @@
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="french.html">Accueil</a></li>
+                <li><a href="index-fr.html">Accueil</a></li>
                 <li><a href="french-about.html">À propos</a></li>
                 <li><a href="french-events.html">Événements</a></li>
                 <li><a href="french-donate.html">Faire un don</a></li>
@@ -304,34 +304,55 @@
             </div>
         </div>
 
-        <div class="container">
-            <div class="donation-block">
-                <h2>Soutenez Notre Cause</h2>
-                <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+        <section class="donation-block-section">
+            <div class="container">
+                    <div class="donation-block">
+                        <h2>Soutenez Notre Cause</h2>
+                        <p>Vos dons généreux nous aident à faire une différence dans la vie des femmes, des enfants et des familles du monde entier. Choisissez un montant ou entrez un montant personnalisé pour contribuer.</p>
+                        
+                        <div class="donation-options">
+                            <label>
+                                <input type="radio" name="donation" value="10">10$
+                            </label>
+                            <label>
+                                <input type="radio" name="donation" value="25">25$
+                            </label>
+                            <label>
+                                <input type="radio" name="donation" value="50">50$
+                            </label>
+                            <label>
+                                <input type="radio" name="donation" value="100">100$
+                            </label>
+                        </div>
                 
-                <div class="donation-options">
-                    <label>
-                        <input type="radio" name="donation" value="10">10$
-                    </label>
-                    <label>
-                        <input type="radio" name="donation" value="25">25$
-                    </label>
-                    <label>
-                        <input type="radio" name="donation" value="50">50$
-                    </label>
-                    <label>
-                        <input type="radio" name="donation" value="100">100$
-                    </label>
-                </div>
-        
-                <div class="custom-donation">
-                    <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrez un montant personnalisé">
+                        <div class="custom-donation">
+                            <input type="number" name="custom-amount" id="custom-amount" placeholder="Entrez un montant personnalisé">
+                        </div>
+                
+                        <div class="buttons">
+                            <a class="btn donate-btn" href="french-donate.html">Page de Don</a>
+                            <div id="donate-button-container">
+                                <div id="donate-button" class="donate-btn"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <button class="donate-btn">Faire un don maintenant</button>
-            </div>
-        </div>
-        
+                <!-- Script PayPal -->
+                <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+                <script>
+                    PayPal.Donation.Button({
+                        env: 'production',
+                        hosted_button_id: 'VAH9KUUUJ8P4E',
+                        image: {
+                            src: '',
+                            alt: 'Bouton de don avec PayPal',
+                            title: 'PayPal - Le moyen le plus sûr et le plus simple de payer en ligne !',
+                        }
+                    }).render('#donate-button');
+                </script>
+            </section>
+            
         <section class="container-img">
             <div class="overlay-text">
                 <h2>Laissez-nous votre main</h2>
