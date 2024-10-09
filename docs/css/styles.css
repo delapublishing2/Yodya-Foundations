@@ -1802,7 +1802,7 @@ body, html {
     background-image: url('../images/key-west-81665_1280.jpg'); /* Replace with your background image URL */
     background-size: cover;
     background-position: center;
-    height: 80vh; /* Adjust height as needed */
+    height: 100vh; /* Adjust height as needed */
     display: flex;
     justify-content: center;
     align-items: center;
