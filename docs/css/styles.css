@@ -1790,3 +1790,39 @@ margin: 0 auto;
     background-color: #FFA000;
 }
 
+/* Hurricane relied */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.cta {
+    background-image: url('../images/key-west-81665_1280.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.cta-overlay {
+    background-color: rgba(255, 255, 255, 1.0); /* White background with opacity */
+    border-radius: 25px;
+    padding: 30px;
+    max-width: 500px; /* Limit width */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content h2 {
+    margin: 0 0 15px;
+}
+
+.cta-content p {
+    margin: 10px 0;
+}
+
