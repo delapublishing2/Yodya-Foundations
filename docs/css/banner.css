@@ -1,0 +1,66 @@
+/* Announcement Banner Styles */
+.announcement-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the scrolling text stays inside */
+}
+
+.marquee-container {
+    flex: 1;
+    overflow: hidden; /* Hides the overflowing text */
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite;
+    /* Animation timing adjustments */
+    animation-timing-function: linear;
+}
+
+/* The link styles */
+.announcement-link {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.announcement-link:hover {
+    color: #003580;
+}
+
+/* Close button styles */
+.close-banner {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.close-banner:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(70%); /* Start from right side */
+    }
+    100% {
+        transform: translateX(-90%); /* End at left side */
+    }
+}

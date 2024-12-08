@@ -195,4 +195,8 @@ window.onclick = function(event) {
     }
 };
 
+function closeBanner() {
+    const banner = document.querySelector('.announcement-banner');
+    banner.style.display = 'none';
+}
 

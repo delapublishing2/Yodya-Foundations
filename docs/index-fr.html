@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yodya Foundation Inc</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/banner.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -34,7 +35,24 @@
             </ul>
         </nav>
     </header>
+
     <main>
+        <div class="announcement-banner">
+            <div class="marquee-container">
+                <div class="marquee">
+                    🎉 **Grande nouvelle :** Nous lançons une nouvelle initiative pour aider davantage de familles !
+                    <a href="french-events.html" class="announcement-link">En savoir plus</a>
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    🌟 **Merci Welocalize :** Merci Welocalize Give Grant pour votre généreuse donation !
+                    <a href="article-1-fr.html" class="announcement-link">Merci !</a>
+                    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                    🚀 **Événement à venir :** Rejoignez notre collecte de fonds le 15 décembre !
+                    <a href="french-events.html" class="announcement-link">Obtenez les détails</a>
+                </div>
+            </div>
+            <button class="close-banner" onclick="closeBanner()">✖</button>
+        </div>
+        
         <section class="header header-home">
             <div class="header-content">
                 <p>YODYA Inc</p>
@@ -49,21 +67,9 @@
 
         <!-- Section Popup -->
 
-        <div id="language-popup" class="popup">
-            <div class="popup-content">
-                <h2>Merci Welocalize Give Grant</h2>
-                <p> Yodya tient à remercier Welocalize Give Grant pour leur soutien à la fondation Yodya. Grâce à leur généreux don de 500,00 $, Yodya peut aider davantage de femmes, d'enfants, de familles et de personnes âgées qui souffrent, en particulier en Haïti, dévasté par les catastrophes. Nous faisons cela une main à la fois et nous ne saurions trop les remercier pour leur soutien et leur récompense.</p>
-                <p> Vous pouvez également nous rejoindre en faisant un petit don afin que nous puissions aider ceux qui souffrent aujourd'hui, une main à la fois. Visitez yodya.org/donate.html ou yodya.com/contact.html pour demander de l'aide ou envoyer votre don aujourd'hui. Bravo à Give Grant !</p>
-                <div class="popup-buttons">
-                    <a href="french-contact.html" class="btn yellow-btn">Obtenir de l'aide</a>
-                    <a href="french-donate.html" class="btn green-btn">Faire un don</a>
-                    <a href="article-1-fr.html" class="btn yellow-btn">En savoir plus</a>
-                    <a class="btn green-btn" onclick="document.getElementById('language-popup').style.display='none'">Fermer</a>
-                    
-                </div>
-            </div>
-        </div>
-        
+     
+
+       
     
         <script src="js/scripts.js"></script>
 
