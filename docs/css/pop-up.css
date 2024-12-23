@@ -44,7 +44,7 @@
 
 
 .popup-overlay.popup-visible {
-    animation: autoClose 8s ease-out forwards;
+    animation: autoClose 12s ease-out forwards;
 }
 
 @keyframes autoClose {
