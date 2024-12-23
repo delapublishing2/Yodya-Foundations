@@ -1,0 +1,72 @@
+/* Popup overlay (hidden by default) */
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Show pop-up immediately if the 'popup-visible' class is present */
+.popup-overlay.popup-visible {
+    display: flex;
+}
+
+/* Existing styles */
+.popup-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    animation: popup-fade 0.3s ease-out;
+}
+
+.popup-content img {
+    max-width: 60%;
+    border-radius: 5px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+.popup-overlay.popup-visible {
+    animation: autoClose 8s ease-out forwards;
+}
+
+@keyframes autoClose {
+    0% {
+        display: flex;
+    }
+    99% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+    }
+}
+
+/* Smooth fade-in animation */
+@keyframes popup-fade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
